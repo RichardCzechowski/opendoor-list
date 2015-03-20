@@ -1,0 +1,13 @@
+<div class="controls">
+  <form ng-submit="addNote(noteText)">
+    <input ng-model="noteText">
+    <button>Add Note</button>
+  </form>
+</div>
+<ul>
+  <li ng-repeat= "note in notes track by $index" ng-class="{'text-muted': note.completed}">
+    <input ng-model="note.completed" type="checkbox">
+    <input ng-model="note.note" class="noteText">
+    <span class="glyphicon glyphicon-trash" ng-click="deleteNote($index)"></span>
+  </li>
+</ul>
